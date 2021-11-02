@@ -29,7 +29,7 @@ async def media_receive_handler(_, m: Message):
     stream_link = Var.URL + str(log_msg.message_id) + '/' +quote_plus(file_name) if file_name else ''
     text = f"**Download Link Generated!** 🎈\n**File Name:** `{file_name}`\n**Download Link:** {stream_link}"
     await m.reply_text(
-        text="`{}`".format(stream_link),
+        text=text,
         quote=True,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Download Now', url=stream_link)]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Download Now 🔗', url=stream_link)]])
     )
